@@ -92,7 +92,7 @@ function tooManyMathes() {
 function renderCountryList(country) {
   const markUpCountryList = country
     .map(({ name, flags }) => {
-      return `<li class="country-list__new-country">
+      return `<li class="country-list">
         <img class="country-list__country-flag" src='${flags.svg}' width="150" alt='Flag of ${name.official}'>
         <h2 class="country-list__item--name">${name.official}</h2>
         </li>`;
@@ -102,7 +102,7 @@ function renderCountryList(country) {
 }
 
 function renderCountryInfo([{ name, flags, capital, population, languages }]) {
-  const markUpCountryInfo = `<div class="country-info__list">
+  const markUpCountryInfo = `<div class="country-list">
             <div class="country-info__item">
               <img class="country-info__item--flag" src="${
                 flags.svg
