@@ -92,9 +92,9 @@ function tooManyMathes() {
 function renderCountryList(country) {
   const markUpCountryList = country
     .map(({ name, flags }) => {
-      return `<li >
-        <img  src='${flags.svg}' width="150" alt='Flag of ${name.official}'>
-        <h2 >${name.official}</h2>
+      return `<li class="country-list__new-country">
+        <img class="country-list__country-flag" src='${flags.svg}' width="150" alt='Flag of ${name.official}'>
+        <h2 class="country-list__item--name">${name.official}</h2>
         </li>`;
     })
     .join('');
@@ -102,16 +102,16 @@ function renderCountryList(country) {
 }
 
 function renderCountryInfo([{ name, flags, capital, population, languages }]) {
-  const markUpCountryInfo = `<div >
-            <div >
-              <img  src="${
+  const markUpCountryInfo = `<div class="country-info__list">
+            <div class="country-info__item">
+              <img class="country-info__item--flag" src="${
                 flags.svg
               }" width="150" alt="Flag of ${name.official}">
-              <h2 >${name.official}</h2>
+              <h2 class="country-info__item--name">${name.official}</h2>
             </div>
-            <li class="country-info__item"><span >Capital: </span>${capital}</li>
-            <li class="country-info__item"><span >Population: </span>${population}</li>
-            <li class="country-info__item"><span >Languages: </span>${Object.values(
+            <li class="country-info__item"><span class="country-info__item--categories">Capital: </span>${capital}</li>
+            <li class="country-info__item"><span class="country-info__item--categories">Population: </span>${population}</li>
+            <li class="country-info__item"><span class="country-info__item--categories">Languages: </span>${Object.values(
               languages
             ).join(', ')}</li>
         </div>`;
@@ -122,7 +122,7 @@ function renderCountryInfo([{ name, flags, capital, population, languages }]) {
 function renderRussiaInfo() {
   const markUpCountryInfo = `<div >
             <div>
-              <h2 >rassion boloteshion</h2>
+              <h2>rassion boloteshion</h2>
             </div>
             <li ><span >Capital: </span>Болото</li>
         </div>`;
