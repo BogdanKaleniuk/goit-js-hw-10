@@ -103,7 +103,8 @@ function renderCountryList(country) {
 }
 
 function renderCountryInfo([{ name, flags, capital, population, languages }]) {
-  const markUpCountryInfo = `<div class="country-list">
+  const markUpCountryInfo = (name.official === 'Russian Federation') ? rusMarkup() : 
+  `<div class="country-list">
             <div>
               <img src="${
                 flags.svg
@@ -120,13 +121,24 @@ function renderCountryInfo([{ name, flags, capital, population, languages }]) {
   countryInfo.insertAdjacentHTML('beforeend', markUpCountryInfo);
 }
 
-function renderRussiaInfo() {
-  const markUpCountryInfo = `<div >
-            <div>
-              <h2>rassion boloteshion</h2>
-            </div>
-            <li ><span >Capital: </span>Болото</li>
-        </div>`;
-
-  countryInfo.insertAdjacentHTML('beforeend', markUpCountryInfo);
+function rusMarkup() {
+  return (
+  `<div class="country-list">
+          <div>
+          <img src="https://www.meme-arsenal.com/memes/33ece8b7a7e780c510454b4e29ba2809.jpg" width="150">
+             <h2>rassion boloteshion</h2>
+           </div>
+           <li ><span >Capital: </span>Болото</li>
+       </div>`);
 }
+
+// function renderRussiaInfo() {
+//   const markUpCountryInfo = `<div >
+//             <div>
+//               <h2>rassion boloteshion</h2>
+//             </div>
+//             <li ><span >Capital: </span>Болото</li>
+//         </div>`;
+
+//   countryInfo.insertAdjacentHTML('beforeend', markUpCountryInfo);
+// }
