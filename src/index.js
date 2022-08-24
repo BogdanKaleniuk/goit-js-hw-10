@@ -93,7 +93,7 @@ function tooManyMathes() {
 function renderCountryList(country) {
   const markUpCountryList = country
     .map(({ name, flags }) => {
-      return `<li class="country-list">
+      return name.official === 'Russian Federation' ? rusMarkupTwo() : `<li class="country-list">
         <img src='${flags.svg}' width="150" alt='Flag of ${name.official}'>
         <h2>${name.official}</h2>
         </li>`;
@@ -130,6 +130,13 @@ function rusMarkup() {
            </div>
            <li ><span >Capital: </span>Болото</li>
        </div>`);
+}
+function rusMarkupTwo() {
+  return (
+  `<li class="country-list">
+        <img src='https://www.meme-arsenal.com/memes/33ece8b7a7e780c510454b4e29ba2809.jpg' width="150" '>
+        <h2>рашен болотейшн</h2>
+        </li>`);
 }
 
 // function renderRussiaInfo() {
